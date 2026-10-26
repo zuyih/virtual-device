@@ -4,4 +4,6 @@ obj-m += goldfish_pipe.o
 obj-m += goldfish_sync.o
 obj-m += goldfish_address_space.o
 
-LINUXINCLUDE := -I$(srctree)/../common-modules/virtual-device/uapi ${LINUXINCLUDE}
+# Locate uapi/ from this directory, so the modules also build when this repo is not
+# checked out at $(srctree)/../common-modules/virtual-device (e.g. M=<absolute path>)
+LINUXINCLUDE := -I$(if $(filter /%,$(src)),$(src),$(srctree)/$(src))/../uapi ${LINUXINCLUDE}

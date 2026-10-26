@@ -2,3 +2,5 @@
 obj-m += sw_sync.o
 
 LINUXINCLUDE := ${LINUXINCLUDE}
+# sync_trace.h uses TRACE_INCLUDE_PATH ., so define_trace.h finds it through this directory
+CFLAGS_sw_sync.o := -I$(if $(filter /%,$(src)),$(src),$(srctree)/$(src))
