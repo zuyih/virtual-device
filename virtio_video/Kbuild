@@ -2,11 +2,8 @@
 # Kbuild for the virtio-video driver
 #
 
-# --tags to take into account non-annotated tags
-# --dirty to mark version with uncommitted changes as dirty
-GIT_VERSION = $(shell git -C "$(MODULE_GIT_REPOSITORY_DIR)" describe --tags --dirty | sed 's/^v//')
-
-ccflags-y += -DDRIVER_VERSION=\"$(GIT_VERSION)\"
+# Same version and uapi/ include path as the ddk_module target in ../BUILD.bazel
+ccflags-y += -DDRIVER_VERSION=\"android14-6.1\"
 
 virtio_video-y := \
 	virtio_video_driver.o \
@@ -19,4 +16,4 @@ virtio_video-y := \
 	virtio_video_helpers.o
 
 obj-m += virtio_video.o
-LINUXINCLUDE := -I$(srctree)/../common-modules/virtual-device/include/uapi ${LINUXINCLUDE}
+LINUXINCLUDE := -I$(kbuild-dir)/../uapi ${LINUXINCLUDE}

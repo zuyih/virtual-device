@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0
+# Same module and version as the ddk_module target in ../BUILD.bazel
+obj-m += v4l2loopback.o
+ccflags-y += -DDRIVER_VERSION=\"android14-6.1\"

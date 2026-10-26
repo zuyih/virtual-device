@@ -1,7 +1,3 @@
-obj-m += virtio_snd/
-
-obj-$(CONFIG_VIRT_WIFI) += wlan_simulation/
-
-obj-${BUILD_GOLDFISH_DRIVERS} += goldfish_drivers/
-obj-${BUILD_RTL8821CU} += rtl8821cu/
-obj-${BUILD_VIRTIO_DXGKRNL} += virtio_dxgkrnl/
+# SPDX-License-Identifier: GPL-2.0
+# Build the ddk_module targets of BUILD.bazel with make M=<this directory>
+obj-m += goldfish_drivers/ virtio_video/ v4l2loopback/
