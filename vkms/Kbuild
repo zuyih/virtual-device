@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# BUILD.bazel builds vkms as a ddk_module regardless of CONFIG_DRM_VKMS; reuse the object list
+include $(kbuild-dir)/Makefile
+obj-m += vkms.o
