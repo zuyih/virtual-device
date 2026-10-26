@@ -10,4 +10,4 @@ virtio_snd-objs := \
         virtio_pcm_ops.o
 
 obj-m += virtio_snd.o
-LINUXINCLUDE := -I$(srctree)/../common-modules/virtual-device ${LINUXINCLUDE}
+LINUXINCLUDE := -I$(kbuild-dir)/.. ${LINUXINCLUDE}
