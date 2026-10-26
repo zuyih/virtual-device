@@ -1,4 +1,7 @@
 CONFIG_VFIO_PLATFORM=y
 
+# for host-matching CPU capacities with crosvm --host-cpu-topology (b/577855156)
+CONFIG_CPUFREQ_VIRT=y
+
 # workaround for b/514819261
 CONFIG_ARM64_VA_BITS_48=y
