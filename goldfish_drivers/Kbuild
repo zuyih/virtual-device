@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0
+# Same modules as the goldfish ddk_module targets in ../BUILD.bazel, which get uapi/ from :common_headers
+obj-m += goldfish_address_space.o goldfish_pipe.o goldfish_sync.o
+ccflags-y += -I$(src)/../uapi
