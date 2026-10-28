@@ -7,4 +7,4 @@ virtio-gpu-objs := virtgpu_drv.o virtgpu_kms.o virtgpu_gem.o \
 
 obj-m += virtio-gpu.o
 
-LINUXINCLUDE := -I$(srctree)/../common-modules/virtual-device/uapi ${LINUXINCLUDE}
+LINUXINCLUDE := -I$(kbuild-dir)/../uapi ${LINUXINCLUDE}
